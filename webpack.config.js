@@ -7,7 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const nodeEnv = process.env.NODE_ENV || 'production';
 
 module.exports = {
-  devtool:'source-map', 
+  devtool: 'source-map',
   entry: {
     bundle: './src/main.js',
   },
