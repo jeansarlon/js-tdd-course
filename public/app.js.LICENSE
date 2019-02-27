@@ -1,0 +1,1719 @@
+/******/
+
+// webpackBootstrap
+
+// The module cache
+
+// The require function
+
+// Check if module is in cache
+
+// Create a new module (and put it into the cache)
+
+// Execute the module function
+
+// Return the exports of the module
+
+// Flag the module as loaded
+
+// expose the modules object (__webpack_modules__)
+
+// Load entry module and return exports
+
+// expose the module cache
+
+// define getter function for harmony exports
+
+// define __esModule on exports
+
+// create a fake namespace object
+
+// mode & 1: value is a module id, require it
+
+// mode & 2: merge all properties of value into the ns
+
+// mode & 4: return value when already ns object
+
+// mode & 8|1: behave like require
+
+// getDefaultExport function for compatibility with non-harmony modules
+
+// Object.prototype.hasOwnProperty.call
+
+// __webpack_public_path__
+
+/************************************************************************/
+
+/* 0 */
+
+/***/
+
+/* 1 */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/F.js
+
+/**
+ * A function that always returns `false`. Any passed in parameters are ignored.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.9.0
+ * @category Function
+ * @sig * -> Boolean
+ * @param {*}
+ * @return {Boolean}
+ * @see R.T
+ * @example
+ *
+ *      R.F(); //=> false
+ */
+
+/* harmony default export */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isPlaceholder.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_curry1.js
+
+/**
+ * Optimized internal one-arity curry function.
+ *
+ * @private
+ * @category Function
+ * @param {Function} fn The function to curry.
+ * @return {Function} The curried function.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_curry2.js
+
+/**
+ * Optimized internal two-arity curry function.
+ *
+ * @private
+ * @category Function
+ * @param {Function} fn The function to curry.
+ * @return {Function} The curried function.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/add.js
+
+/**
+ * Adds two values.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Math
+ * @sig Number -> Number -> Number
+ * @param {Number} a
+ * @param {Number} b
+ * @return {Number}
+ * @see R.subtract
+ * @example
+ *
+ *      R.add(2, 3);       //=>  5
+ *      R.add(7)(10);      //=> 17
+ */
+
+/*#__PURE__*/
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_concat.js
+
+/**
+ * Private `concat` function to merge two array-like objects.
+ *
+ * @private
+ * @param {Array|Arguments} [set1=[]] An array-like object.
+ * @param {Array|Arguments} [set2=[]] An array-like object.
+ * @return {Array} A new, merged array.
+ * @example
+ *
+ *      _concat([4, 5, 6], [1, 2, 3]); //=> [4, 5, 6, 1, 2, 3]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_arity.js
+
+/* eslint-disable no-unused-vars */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_curryN.js
+
+/**
+ * Internal curryN function.
+ *
+ * @private
+ * @category Function
+ * @param {Number} length The arity of the curried function.
+ * @param {Array} received An array of arguments received thus far.
+ * @param {Function} fn The function to curry.
+ * @return {Function} The curried function.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/curryN.js
+
+/**
+ * Returns a curried equivalent of the provided function, with the specified
+ * arity. The curried function has two unusual capabilities. First, its
+ * arguments needn't be provided one at a time. If `g` is `R.curryN(3, f)`, the
+ * following are equivalent:
+ *
+ *   - `g(1)(2)(3)`
+ *   - `g(1)(2, 3)`
+ *   - `g(1, 2)(3)`
+ *   - `g(1, 2, 3)`
+ *
+ * Secondly, the special placeholder value [`R.__`](#__) may be used to specify
+ * "gaps", allowing partial application of any combination of arguments,
+ * regardless of their positions. If `g` is as above and `_` is [`R.__`](#__),
+ * the following are equivalent:
+ *
+ *   - `g(1, 2, 3)`
+ *   - `g(_, 2, 3)(1)`
+ *   - `g(_, _, 3)(1)(2)`
+ *   - `g(_, _, 3)(1, 2)`
+ *   - `g(_, 2)(1)(3)`
+ *   - `g(_, 2)(1, 3)`
+ *   - `g(_, 2)(_, 3)(1)`
+ *
+ * @func
+ * @memberOf R
+ * @since v0.5.0
+ * @category Function
+ * @sig Number -> (* -> a) -> (* -> a)
+ * @param {Number} length The arity for the returned function.
+ * @param {Function} fn The function to curry.
+ * @return {Function} A new, curried function.
+ * @see R.curry
+ * @example
+ *
+ *      const sumArgs = (...args) => R.sum(args);
+ *
+ *      const curriedAddFourNumbers = R.curryN(4, sumArgs);
+ *      const f = curriedAddFourNumbers(1, 2);
+ *      const g = f(3);
+ *      g(4); //=> 10
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_curry3.js
+
+/**
+ * Optimized internal three-arity curry function.
+ *
+ * @private
+ * @category Function
+ * @param {Function} fn The function to curry.
+ * @return {Function} The curried function.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/adjust.js
+
+/**
+ * Applies a function to the value at the given index of an array, returning a
+ * new copy of the array with the element at the given index replaced with the
+ * result of the function application.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.14.0
+ * @category List
+ * @sig Number -> (a -> a) -> [a] -> [a]
+ * @param {Number} idx The index.
+ * @param {Function} fn The function to apply.
+ * @param {Array|Arguments} list An array-like object whose value
+ *        at the supplied index will be replaced.
+ * @return {Array} A copy of the supplied array-like object with
+ *         the element at index `idx` replaced with the value
+ *         returned by applying `fn` to the existing element.
+ * @see R.update
+ * @example
+ *
+ *      R.adjust(1, R.toUpper, ['a', 'b', 'c', 'd']);      //=> ['a', 'B', 'c', 'd']
+ *      R.adjust(-1, R.toUpper, ['a', 'b', 'c', 'd']);     //=> ['a', 'b', 'c', 'D']
+ * @symb R.adjust(-1, f, [a, b]) = [a, f(b)]
+ * @symb R.adjust(0, f, [a, b]) = [f(a), b]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isTransformer.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_dispatchable.js
+
+/**
+ * Returns a function that dispatches with different strategies based on the
+ * object in list position (last argument). If it is an array, executes [fn].
+ * Otherwise, if it has a function with one of the given method names, it will
+ * execute that function (functor case). Otherwise, if it is a transformer,
+ * uses transducer [xf] to return a new transformer (transducer case).
+ * Otherwise, it will default to executing [fn].
+ *
+ * @private
+ * @param {Array} methodNames properties to check for a custom implementation
+ * @param {Function} xf transducer to initialize if object is transformer
+ * @param {Function} fn default ramda implementation
+ * @return {Function} A function that dispatches on object in list position
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_reduced.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xfBase.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xall.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_map.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isString.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isArrayLike.js
+
+/**
+ * Tests whether or not an object is similar to an array.
+ *
+ * @private
+ * @category Type
+ * @category List
+ * @sig * -> Boolean
+ * @param {*} x The object to test.
+ * @return {Boolean} `true` if `x` has a numeric length property and extreme indices defined; `false` otherwise.
+ * @example
+ *
+ *      _isArrayLike([]); //=> true
+ *      _isArrayLike(true); //=> false
+ *      _isArrayLike({}); //=> false
+ *      _isArrayLike({length: 10}); //=> false
+ *      _isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/bind.js
+
+/**
+ * Creates a function that is bound to a context.
+ * Note: `R.bind` does not provide the additional argument-binding capabilities of
+ * [Function.prototype.bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+ *
+ * @func
+ * @memberOf R
+ * @since v0.6.0
+ * @category Function
+ * @category Object
+ * @sig (* -> *) -> {*} -> (* -> *)
+ * @param {Function} fn The function to bind to context
+ * @param {Object} thisObj The context to bind `fn` to
+ * @return {Function} A function that will execute in the context of `thisObj`.
+ * @see R.partial
+ * @example
+ *
+ *      const log = R.bind(console.log, console);
+ *      R.pipe(R.assoc('a', 2), R.tap(log), R.assoc('a', 3))({a: 1}); //=> {a: 3}
+ *      // logs {a: 2}
+ * @symb R.bind(f, o)(a, b) = f.call(o, a, b)
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_reduce.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xmap.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_has.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isArguments.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_aperture.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xaperture.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/applySpec.js
+
+// Use custom mapValues function to avoid issues with specs that include a "map" key and R.map
+
+// delegating calls to .map
+
+/**
+ * Given a spec object recursively mapping properties to functions, creates a
+ * function producing an object of the same structure, by mapping each property
+ * to the result of calling its associated function with the supplied arguments.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.20.0
+ * @category Function
+ * @sig {k: ((a, b, ..., m) -> v)} -> ((a, b, ..., m) -> {k: v})
+ * @param {Object} spec an object recursively mapping properties to functions for
+ *        producing the values for these properties.
+ * @return {Function} A function that returns an object of the same structure
+ * as `spec', with each property set to the value returned by calling its
+ * associated function with the supplied arguments.
+ * @see R.converge, R.juxt
+ * @example
+ *
+ *      const getMetrics = R.applySpec({
+ *        sum: R.add,
+ *        nested: { mul: R.multiply }
+ *      });
+ *      getMetrics(2, 4); // => { sum: 6, nested: { mul: 8 } }
+ * @symb R.applySpec({ x: f, y: { z: g } })(a, b) = { x: f(a, b), y: { z: g(a, b) } }
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isFunction.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/liftN.js
+
+/**
+ * "lifts" a function to be the specified arity, so that it may "map over" that
+ * many lists, Functions or other objects that satisfy the [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply).
+ *
+ * @func
+ * @memberOf R
+ * @since v0.7.0
+ * @category Function
+ * @sig Number -> (*... -> *) -> ([*]... -> [*])
+ * @param {Function} fn The function to lift into higher context
+ * @return {Function} The lifted function.
+ * @see R.lift, R.ap
+ * @example
+ *
+ *      const madd3 = R.liftN(3, (...args) => R.sum(args));
+ *      madd3([1,2,3], [1,2,3], [1]); //=> [3, 4, 5, 4, 5, 6, 5, 6, 7]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_makeFlat.js
+
+/**
+ * `_makeFlat` is a helper function that returns a one-level or fully recursive
+ * function based on the flag passed in.
+ *
+ * @private
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_forceReduced.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_flatCat.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_cloneRegExp.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/type.js
+
+/**
+ * Gives a single-word string description of the (native) type of a value,
+ * returning such answers as 'Object', 'Number', 'Array', or 'Null'. Does not
+ * attempt to distinguish user Object types any further, reporting them all as
+ * 'Object'.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.8.0
+ * @category Type
+ * @sig (* -> {*}) -> String
+ * @param {*} val The value to test
+ * @return {String}
+ * @example
+ *
+ *      R.type({}); //=> "Object"
+ *      R.type(1); //=> "Number"
+ *      R.type(false); //=> "Boolean"
+ *      R.type('s'); //=> "String"
+ *      R.type(null); //=> "Null"
+ *      R.type([]); //=> "Array"
+ *      R.type(/[A-z]/); //=> "RegExp"
+ *      R.type(() => {}); //=> "Function"
+ *      R.type(undefined); //=> "Undefined"
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_clone.js
+
+/**
+ * Copies an object.
+ *
+ * @private
+ * @param {*} value The value to be copied
+ * @param {Array} refFrom Array containing the source references
+ * @param {Array} refTo Array containing the copied source references
+ * @param {Boolean} deep Whether or not to perform deep cloning.
+ * @return {*} The copied value.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/clone.js
+
+/**
+ * Creates a deep copy of the value which may contain (nested) `Array`s and
+ * `Object`s, `Number`s, `String`s, `Boolean`s and `Date`s. `Function`s are
+ * assigned by reference rather than copied
+ *
+ * Dispatches to a `clone` method if present.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Object
+ * @sig {*} -> {*}
+ * @param {*} value The object or array to clone
+ * @return {*} A deeply cloned copy of `val`
+ * @example
+ *
+ *      const objects = [{}, {}, {}];
+ *      const objectsClone = R.clone(objects);
+ *      objects === objectsClone; //=> false
+ *      objects[0] === objectsClone[0]; //=> false
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_pipe.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_checkForMethod.js
+
+/**
+ * This checks whether a function has a [methodname] function. If it isn't an
+ * array it will execute that function otherwise it will default to the ramda
+ * implementation.
+ *
+ * @private
+ * @param {Function} fn ramda implemtation
+ * @param {String} methodname property to check for a custom implementation
+ * @return {Object} Whatever the return value of the method is.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/slice.js
+
+/**
+ * Returns the elements of the given list or string (or object with a `slice`
+ * method) from `fromIndex` (inclusive) to `toIndex` (exclusive).
+ *
+ * Dispatches to the `slice` method of the third argument, if present.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.4
+ * @category List
+ * @sig Number -> Number -> [a] -> [a]
+ * @sig Number -> Number -> String -> String
+ * @param {Number} fromIndex The start index (inclusive).
+ * @param {Number} toIndex The end index (exclusive).
+ * @param {*} list
+ * @return {*}
+ * @example
+ *
+ *      R.slice(1, 3, ['a', 'b', 'c', 'd']);        //=> ['b', 'c']
+ *      R.slice(1, Infinity, ['a', 'b', 'c', 'd']); //=> ['b', 'c', 'd']
+ *      R.slice(0, -1, ['a', 'b', 'c', 'd']);       //=> ['a', 'b', 'c']
+ *      R.slice(-3, -1, ['a', 'b', 'c', 'd']);      //=> ['b', 'c']
+ *      R.slice(0, 3, 'ramda');                     //=> 'ram'
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/pipe.js
+
+/**
+ * Performs left-to-right function composition. The leftmost function may have
+ * any arity; the remaining functions must be unary.
+ *
+ * In some libraries this function is named `sequence`.
+ *
+ * **Note:** The result of pipe is not automatically curried.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Function
+ * @sig (((a, b, ..., n) -> o), (o -> p), ..., (x -> y), (y -> z)) -> ((a, b, ..., n) -> z)
+ * @param {...Function} functions
+ * @return {Function}
+ * @see R.compose
+ * @example
+ *
+ *      const f = R.pipe(Math.pow, R.negate, R.inc);
+ *
+ *      f(3, 4); // -(3^4) + 1
+ * @symb R.pipe(f, g, h)(a, b) = h(g(f(a, b)))
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/reverse.js
+
+/**
+ * Returns a new list or string with the elements or characters in reverse
+ * order.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category List
+ * @sig [a] -> [a]
+ * @sig String -> String
+ * @param {Array|String} list
+ * @return {Array|String}
+ * @example
+ *
+ *      R.reverse([1, 2, 3]);  //=> [3, 2, 1]
+ *      R.reverse([1, 2]);     //=> [2, 1]
+ *      R.reverse([1]);        //=> [1]
+ *      R.reverse([]);         //=> []
+ *
+ *      R.reverse('abc');      //=> 'cba'
+ *      R.reverse('ab');       //=> 'ba'
+ *      R.reverse('a');        //=> 'a'
+ *      R.reverse('');         //=> ''
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/compose.js
+
+/**
+ * Performs right-to-left function composition. The rightmost function may have
+ * any arity; the remaining functions must be unary.
+ *
+ * **Note:** The result of compose is not automatically curried.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Function
+ * @sig ((y -> z), (x -> y), ..., (o -> p), ((a, b, ..., n) -> o)) -> ((a, b, ..., n) -> z)
+ * @param {...Function} ...functions The functions to compose
+ * @return {Function}
+ * @see R.pipe
+ * @example
+ *
+ *      const classyGreeting = (firstName, lastName) => "The name's " + lastName + ", " + firstName + " " + lastName
+ *      const yellGreeting = R.compose(R.toUpper, classyGreeting);
+ *      yellGreeting('James', 'Bond'); //=> "THE NAME'S BOND, JAMES BOND"
+ *
+ *      R.compose(Math.abs, R.add(1), R.multiply(2))(-4) //=> 7
+ *
+ * @symb R.compose(f, g, h)(a, b) = f(g(h(a, b)))
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/composeK.js
+
+/**
+ * Returns the right-to-left Kleisli composition of the provided functions,
+ * each of which must return a value of a type supported by [`chain`](#chain).
+ *
+ * `R.composeK(h, g, f)` is equivalent to `R.compose(R.chain(h), R.chain(g), f)`.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.16.0
+ * @category Function
+ * @sig Chain m => ((y -> m z), (x -> m y), ..., (a -> m b)) -> (a -> m z)
+ * @param {...Function} ...functions The functions to compose
+ * @return {Function}
+ * @see R.pipeK
+ * @deprecated since v0.26.0
+ * @example
+ *
+ *       //  get :: String -> Object -> Maybe *
+ *       const get = R.curry((propName, obj) => Maybe(obj[propName]))
+ *
+ *       //  getStateCode :: Maybe String -> Maybe String
+ *       const getStateCode = R.composeK(
+ *         R.compose(Maybe.of, R.toUpper),
+ *         get('state'),
+ *         get('address'),
+ *         get('user'),
+ *       );
+ *       getStateCode({"user":{"address":{"state":"ny"}}}); //=> Maybe.Just("NY")
+ *       getStateCode({}); //=> Maybe.Nothing()
+ * @symb R.composeK(f, g, h)(a) = R.chain(f, R.chain(g, h(a)))
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_pipeP.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/pipeP.js
+
+/**
+ * Performs left-to-right composition of one or more Promise-returning
+ * functions. The leftmost function may have any arity; the remaining functions
+ * must be unary.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.10.0
+ * @category Function
+ * @sig ((a -> Promise b), (b -> Promise c), ..., (y -> Promise z)) -> (a -> Promise z)
+ * @param {...Function} functions
+ * @return {Function}
+ * @see R.composeP
+ * @deprecated since v0.26.0
+ * @example
+ *
+ *      //  followersForUser :: String -> Promise [User]
+ *      const followersForUser = R.pipeP(db.getUserById, db.getFollowers);
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/composeP.js
+
+/**
+ * Performs right-to-left composition of one or more Promise-returning
+ * functions. The rightmost function may have any arity; the remaining
+ * functions must be unary.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.10.0
+ * @category Function
+ * @sig ((y -> Promise z), (x -> Promise y), ..., (a -> Promise b)) -> (a -> Promise z)
+ * @param {...Function} functions The functions to compose
+ * @return {Function}
+ * @see R.pipeP
+ * @deprecated since v0.26.0
+ * @example
+ *
+ *      const db = {
+ *        users: {
+ *          JOE: {
+ *            name: 'Joe',
+ *            followers: ['STEVE', 'SUZY']
+ *          }
+ *        }
+ *      }
+ *
+ *      // We'll pretend to do a db lookup which returns a promise
+ *      const lookupUser = (userId) => Promise.resolve(db.users[userId])
+ *      const lookupFollowers = (user) => Promise.resolve(user.followers)
+ *      lookupUser('JOE').then(lookupFollowers)
+ *
+ *      //  followersForUser :: String -> Promise [UserId]
+ *      const followersForUser = R.composeP(lookupFollowers, lookupUser);
+ *      followersForUser('JOE').then(followers => console.log('Followers:', followers))
+ *      // Followers: ["STEVE","SUZY"]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/nth.js
+
+/**
+ * Returns the nth element of the given list or string. If n is negative the
+ * element at index length + n is returned.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category List
+ * @sig Number -> [a] -> a | Undefined
+ * @sig Number -> String -> String
+ * @param {Number} offset
+ * @param {*} list
+ * @return {*}
+ * @example
+ *
+ *      const list = ['foo', 'bar', 'baz', 'quux'];
+ *      R.nth(1, list); //=> 'bar'
+ *      R.nth(-1, list); //=> 'quux'
+ *      R.nth(-99, list); //=> undefined
+ *
+ *      R.nth(2, 'abc'); //=> 'c'
+ *      R.nth(3, 'abc'); //=> ''
+ * @symb R.nth(-1, [a, b, c]) = c
+ * @symb R.nth(0, [a, b, c]) = a
+ * @symb R.nth(1, [a, b, c]) = b
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_identity.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/identity.js
+
+/**
+ * A function that does nothing but return the parameter supplied to it. Good
+ * as a default or placeholder function.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Function
+ * @sig a -> a
+ * @param {*} x The value to return.
+ * @return {*} The input value, `x`.
+ * @example
+ *
+ *      R.identity(1); //=> 1
+ *
+ *      const obj = {};
+ *      R.identity(obj) === obj; //=> true
+ * @symb R.identity(a) = a
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_arrayFromIterator.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_includesWith.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_functionName.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_objectIs.js
+
+// Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+
+// SameValue algorithm
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_equals.js
+
+/**
+ * private _uniqContentEquals function.
+ * That function is checking equality of 2 iterator contents with 2 assumptions
+ * - iterators lengths are the same
+ * - iterators values are unique
+ *
+ * false-positive result will be returned for comparision of, e.g.
+ * - [1,2,3] and [1,2,3,4]
+ * - [1,1,1] and [1,2,3]
+ * */
+
+// if *a* array contains any element that is not included in *b*
+
+// Values of other types are only equal if identical.
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/equals.js
+
+/**
+ * Returns `true` if its arguments are equivalent, `false` otherwise. Handles
+ * cyclical data structures.
+ *
+ * Dispatches symmetrically to the `equals` methods of both arguments, if
+ * present.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.15.0
+ * @category Relation
+ * @sig a -> b -> Boolean
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean}
+ * @example
+ *
+ *      R.equals(1, 1); //=> true
+ *      R.equals(1, '1'); //=> false
+ *      R.equals([1, 2, 3], [1, 2, 3]); //=> true
+ *
+ *      const a = {}; a.v = a;
+ *      const b = {}; b.v = b;
+ *      R.equals(a, b); //=> true
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_indexOf.js
+
+// Array.prototype.indexOf doesn't exist below IE9
+
+// manually crawl the list to distinguish between +0 and -0
+
+// non-zero numbers can utilise Set
+
+// all these types can utilise Set
+
+// NaN
+
+// null can utilise Set
+
+// anything else not covered above, defer to R.equals
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_includes.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_quote.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_toISOString.js
+
+/**
+ * Polyfill from <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString>.
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_complement.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_filter.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isObject.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xfilter.js
+
+// else
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_toString.js
+
+//  mapPairs :: (Object, [String]) -> [String]
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/toString.js
+
+/**
+ * Returns the string representation of the given value. `eval`'ing the output
+ * should result in a value equivalent to the input value. Many of the built-in
+ * `toString` methods do not satisfy this requirement.
+ *
+ * If the given value is an `[object Object]` with a `toString` method other
+ * than `Object.prototype.toString`, this method is invoked with no arguments
+ * to produce the return value. This means user-defined constructor functions
+ * can provide a suitable `toString` method. For example:
+ *
+ *     function Point(x, y) {
+ *       this.x = x;
+ *       this.y = y;
+ *     }
+ *
+ *     Point.prototype.toString = function() {
+ *       return 'new Point(' + this.x + ', ' + this.y + ')';
+ *     };
+ *
+ *     R.toString(new Point(1, 2)); //=> 'new Point(1, 2)'
+ *
+ * @func
+ * @memberOf R
+ * @since v0.14.0
+ * @category String
+ * @sig * -> String
+ * @param {*} val
+ * @return {String}
+ * @example
+ *
+ *      R.toString(42); //=> '42'
+ *      R.toString('abc'); //=> '"abc"'
+ *      R.toString([1, 2, 3]); //=> '[1, 2, 3]'
+ *      R.toString({foo: 1, bar: 2, baz: 3}); //=> '{"bar": 2, "baz": 3, "foo": 1}'
+ *      R.toString(new Date('2001-02-03T04:05:06Z')); //=> 'new Date("2001-02-03T04:05:06.000Z")'
+ */
+
+// distinguish between +0 and -0
+
+// these types can all utilise the native Set
+
+// set._items['boolean'] holds a two element array
+
+// representing [ falseExists, trueExists ]
+
+// compare functions for reference equality
+
+/* falls through */
+
+// reduce the search size of heterogeneous sets by creating buckets
+
+// for each type.
+
+// scan through all previously applied items
+
+// A simple Set type that honours R.equals semantics
+
+/* globals Set */
+
+// until we figure out why jsdoc chokes on this
+
+// @param item The item to add to the Set
+
+// @returns {boolean} true if the item did not exist prior, otherwise false
+
+//
+
+// Combines the logic for checking whether an item is a member of the set and
+
+// for adding a new item to the set.
+
+// @param item       The item to check or add to the Set instance.
+
+// @param shouldAdd  If true, the item will be added to the set if it doesn't
+
+//                   already exist.
+
+// @param set        The set instance to check or add to.
+
+// @return {boolean} true if the item already existed, otherwise false.
+
+// @param item The item to check for existence in the Set
+
+// @returns {boolean} true if the item exists in the Set, otherwise false
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/difference.js
+
+/**
+ * Finds the set (i.e. no duplicates) of all elements in the first list not
+ * contained in the second list. Objects and Arrays are compared in terms of
+ * value equality, not reference equality.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category Relation
+ * @sig [*] -> [*] -> [*]
+ * @param {Array} list1 The first list.
+ * @param {Array} list2 The second list.
+ * @return {Array} The elements in `list1` that are not in `list2`.
+ * @see R.differenceWith, R.symmetricDifference, R.symmetricDifferenceWith, R.without
+ * @example
+ *
+ *      R.difference([1,2,3,4], [7,6,5,4,3]); //=> [1,2]
+ *      R.difference([7,6,5,4,3], [1,2,3,4]); //=> [7,6,5]
+ *      R.difference([{a: 1}, {b: 2}], [{a: 1}, {c: 3}]) //=> [{b: 2}]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_dropLast.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xdropLast.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_dropLastWhile.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_xdropLastWhile.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_objectAssign.js
+
+// Based on https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/objOf.js
+
+/**
+ * Creates an object containing a single key:value pair.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.18.0
+ * @category Object
+ * @sig String -> a -> {String:a}
+ * @param {String} key
+ * @param {*} val
+ * @return {Object}
+ * @see R.pair
+ * @example
+ *
+ *      const matchPhrases = R.compose(
+ *        R.objOf('must'),
+ *        R.map(R.objOf('match_phrase'))
+ *      );
+ *      matchPhrases(['foo', 'bar', 'baz']); //=> {must: [{match_phrase: 'foo'}, {match_phrase: 'bar'}, {match_phrase: 'baz'}]}
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/into.js
+
+/**
+ * Transforms the items of the list with the transducer and appends the
+ * transformed items to the accumulator using an appropriate iterator function
+ * based on the accumulator type.
+ *
+ * The accumulator can be an array, string, object or a transformer. Iterated
+ * items will be appended to arrays and concatenated to strings. Objects will
+ * be merged directly or 2-item arrays will be merged as key, value pairs.
+ *
+ * The accumulator can also be a transformer object that provides a 2-arity
+ * reducing iterator function, step, 0-arity initial value function, init, and
+ * 1-arity result extraction function result. The step function is used as the
+ * iterator function in reduce. The result function is used to convert the
+ * final accumulator into the return type and in most cases is R.identity. The
+ * init function is used to provide the initial accumulator.
+ *
+ * The iteration is performed with [`R.reduce`](#reduce) after initializing the
+ * transducer.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.12.0
+ * @category List
+ * @sig a -> (b -> b) -> [c] -> a
+ * @param {*} acc The initial accumulator value.
+ * @param {Function} xf The transducer function. Receives a transformer and returns a transformer.
+ * @param {Array} list The list to iterate over.
+ * @return {*} The final, accumulated value.
+ * @see R.transduce
+ * @example
+ *
+ *      const numbers = [1, 2, 3, 4];
+ *      const transducer = R.compose(R.map(R.add(1)), R.take(2));
+ *
+ *      R.into([], transducer, numbers); //=> [2, 3]
+ *
+ *      const intoArray = R.into([]);
+ *      intoArray(transducer, numbers); //=> [2, 3]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isNumber.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/length.js
+
+/**
+ * Returns the number of elements in the array by returning `list.length`.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.3.0
+ * @category List
+ * @sig [a] -> Number
+ * @param {Array} list The array to inspect.
+ * @return {Number} The length of the array.
+ * @example
+ *
+ *      R.length([]); //=> 0
+ *      R.length([1, 2, 3]); //=> 3
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_of.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/of.js
+
+/**
+ * Returns a singleton array containing the value provided.
+ *
+ * Note this `of` is different from the ES6 `of`; See
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
+ *
+ * @func
+ * @memberOf R
+ * @since v0.3.0
+ * @category Function
+ * @sig a -> [a]
+ * @param {*} x any value
+ * @return {Array} An array wrapping `x`.
+ * @example
+ *
+ *      R.of(null); //=> [null]
+ *      R.of([42]); //=> [[42]]
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_assertPromise.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/otherwise.js
+
+/**
+ * Returns the result of applying the onFailure function to the value inside
+ * a failed promise. This is useful for handling rejected promises
+ * inside function compositions.
+ *
+ * @func
+ * @memberOf R
+ * @category Function
+ * @sig (e -> b) -> (Promise e a) -> (Promise e b)
+ * @sig (e -> (Promise f b)) -> (Promise e a) -> (Promise f b)
+ * @param {Function} onFailure The function to apply. Can return a value or a promise of a value.
+ * @param {Promise} p
+ * @return {Promise} The result of calling `p.then(null, onFailure)`
+ * @see R.then
+ * @example
+ *
+ *      var failedFetch = (id) => Promise.reject('bad ID');
+ *      var useDefault = () => ({ firstName: 'Bob', lastName: 'Loblaw' })
+ *
+ *      //recoverFromFailure :: String -> Promise ({firstName, lastName})
+ *      var recoverFromFailure = R.pipe(
+ *        failedFetch,
+ *        R.otherwise(useDefault),
+ *        R.then(R.pick(['firstName', 'lastName'])),
+ *      );
+ *      recoverFromFailure(12345).then(console.log)
+ */
+
+// The value returned by the getter function is first transformed with `f`,
+
+// then set as the value of an `Identity`. This is then mapped over with the
+
+// setter function of the lens.
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_createPartialApplicator.js
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/partial.js
+
+/**
+ * Takes a function `f` and a list of arguments, and returns a function `g`.
+ * When applied, `g` returns the result of applying `f` to the arguments
+ * provided initially followed by the arguments provided to `g`.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.10.0
+ * @category Function
+ * @sig ((a, b, c, ..., n) -> x) -> [a, b, c, ...] -> ((d, e, f, ..., n) -> x)
+ * @param {Function} f
+ * @param {Array} args
+ * @return {Function}
+ * @see R.partialRight, R.curry
+ * @example
+ *
+ *      const multiply2 = (a, b) => a * b;
+ *      const double = R.partial(multiply2, [2]);
+ *      double(2); //=> 4
+ *
+ *      const greet = (salutation, title, firstName, lastName) =>
+ *        salutation + ', ' + title + ' ' + firstName + ' ' + lastName + '!';
+ *
+ *      const sayHello = R.partial(greet, ['Hello']);
+ *      const sayHelloToMs = R.partial(sayHello, ['Ms.']);
+ *      sayHelloToMs('Jane', 'Jones'); //=> 'Hello, Ms. Jane Jones!'
+ * @symb R.partial(f, [a, b])(c, d) = f(a, b, c, d)
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/pipeK.js
+
+/**
+ * Returns the left-to-right Kleisli composition of the provided functions,
+ * each of which must return a value of a type supported by [`chain`](#chain).
+ *
+ * `R.pipeK(f, g, h)` is equivalent to `R.pipe(f, R.chain(g), R.chain(h))`.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.16.0
+ * @category Function
+ * @sig Chain m => ((a -> m b), (b -> m c), ..., (y -> m z)) -> (a -> m z)
+ * @param {...Function}
+ * @return {Function}
+ * @see R.composeK
+ * @deprecated since v0.26.0
+ * @example
+ *
+ *      //  parseJson :: String -> Maybe *
+ *      //  get :: String -> Object -> Maybe *
+ *
+ *      //  getStateCode :: Maybe String -> Maybe String
+ *      const getStateCode = R.pipeK(
+ *        parseJson,
+ *        get('user'),
+ *        get('address'),
+ *        get('state'),
+ *        R.compose(Maybe.of, R.toUpper)
+ *      );
+ *
+ *      getStateCode('{"user":{"address":{"state":"ny"}}}');
+ *      //=> Just('NY')
+ *      getStateCode('[Invalid JSON]');
+ *      //=> Nothing()
+ * @symb R.pipeK(f, g, h)(a) = R.chain(h, R.chain(g, f(a)))
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/prepend.js
+
+/**
+ * Returns a new list with the given element at the front, followed by the
+ * contents of the list.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.1.0
+ * @category List
+ * @sig a -> [a] -> [a]
+ * @param {*} el The item to add to the head of the output list.
+ * @param {Array} list The array to add to the tail of the output list.
+ * @return {Array} A new array.
+ * @see R.append
+ * @example
+ *
+ *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/test.js
+
+/**
+ * Determines whether a given string matches a given regular expression.
+ *
+ * @func
+ * @memberOf R
+ * @since v0.12.0
+ * @category String
+ * @sig RegExp -> String -> Boolean
+ * @param {RegExp} pattern
+ * @param {String} str
+ * @return {Boolean}
+ * @see R.match
+ * @example
+ *
+ *      R.test(/^x/, 'xyz'); //=> true
+ *      R.test(/^y/, 'xyz'); //=> false
+ */
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/internal/_isRegExp.js
+
+// Using `Const` effectively ignores the setter function of the `lens`,
+
+// leaving the value returned by the getter function unmodified.
+
+// = xprodWith(prepend); (takes about 3 times as long...)
+
+// CONCATENATED MODULE: ./node_modules/ramda/es/index.js
+
+/* concated harmony reexport F */
+
+/* concated harmony reexport T */
+
+/* concated harmony reexport __ */
+
+/* concated harmony reexport add */
+
+/* concated harmony reexport addIndex */
+
+/* concated harmony reexport adjust */
+
+/* concated harmony reexport all */
+
+/* concated harmony reexport allPass */
+
+/* concated harmony reexport always */
+
+/* concated harmony reexport and */
+
+/* concated harmony reexport any */
+
+/* concated harmony reexport anyPass */
+
+/* concated harmony reexport ap */
+
+/* concated harmony reexport aperture */
+
+/* concated harmony reexport append */
+
+/* concated harmony reexport apply */
+
+/* concated harmony reexport applySpec */
+
+/* concated harmony reexport applyTo */
+
+/* concated harmony reexport ascend */
+
+/* concated harmony reexport assoc */
+
+/* concated harmony reexport assocPath */
+
+/* concated harmony reexport binary */
+
+/* concated harmony reexport bind */
+
+/* concated harmony reexport both */
+
+/* concated harmony reexport call */
+
+/* concated harmony reexport chain */
+
+/* concated harmony reexport clamp */
+
+/* concated harmony reexport clone */
+
+/* concated harmony reexport comparator */
+
+/* concated harmony reexport complement */
+
+/* concated harmony reexport compose */
+
+/* concated harmony reexport composeK */
+
+/* concated harmony reexport composeP */
+
+/* concated harmony reexport composeWith */
+
+/* concated harmony reexport concat */
+
+/* concated harmony reexport cond */
+
+/* concated harmony reexport construct */
+
+/* concated harmony reexport constructN */
+
+/* concated harmony reexport contains */
+
+/* concated harmony reexport converge */
+
+/* concated harmony reexport countBy */
+
+/* concated harmony reexport curry */
+
+/* concated harmony reexport curryN */
+
+/* concated harmony reexport dec */
+
+/* concated harmony reexport defaultTo */
+
+/* concated harmony reexport descend */
+
+/* concated harmony reexport difference */
+
+/* concated harmony reexport differenceWith */
+
+/* concated harmony reexport dissoc */
+
+/* concated harmony reexport dissocPath */
+
+/* concated harmony reexport divide */
+
+/* concated harmony reexport drop */
+
+/* concated harmony reexport dropLast */
+
+/* concated harmony reexport dropLastWhile */
+
+/* concated harmony reexport dropRepeats */
+
+/* concated harmony reexport dropRepeatsWith */
+
+/* concated harmony reexport dropWhile */
+
+/* concated harmony reexport either */
+
+/* concated harmony reexport empty */
+
+/* concated harmony reexport endsWith */
+
+/* concated harmony reexport eqBy */
+
+/* concated harmony reexport eqProps */
+
+/* concated harmony reexport equals */
+
+/* concated harmony reexport evolve */
+
+/* concated harmony reexport filter */
+
+/* concated harmony reexport find */
+
+/* concated harmony reexport findIndex */
+
+/* concated harmony reexport findLast */
+
+/* concated harmony reexport findLastIndex */
+
+/* concated harmony reexport flatten */
+
+/* concated harmony reexport flip */
+
+/* concated harmony reexport forEach */
+
+/* concated harmony reexport forEachObjIndexed */
+
+/* concated harmony reexport fromPairs */
+
+/* concated harmony reexport groupBy */
+
+/* concated harmony reexport groupWith */
+
+/* concated harmony reexport gt */
+
+/* concated harmony reexport gte */
+
+/* concated harmony reexport has */
+
+/* concated harmony reexport hasIn */
+
+/* concated harmony reexport hasPath */
+
+/* concated harmony reexport head */
+
+/* concated harmony reexport identical */
+
+/* concated harmony reexport identity */
+
+/* concated harmony reexport ifElse */
+
+/* concated harmony reexport inc */
+
+/* concated harmony reexport includes */
+
+/* concated harmony reexport indexBy */
+
+/* concated harmony reexport indexOf */
+
+/* concated harmony reexport init */
+
+/* concated harmony reexport innerJoin */
+
+/* concated harmony reexport insert */
+
+/* concated harmony reexport insertAll */
+
+/* concated harmony reexport intersection */
+
+/* concated harmony reexport intersperse */
+
+/* concated harmony reexport into */
+
+/* concated harmony reexport invert */
+
+/* concated harmony reexport invertObj */
+
+/* concated harmony reexport invoker */
+
+/* concated harmony reexport is */
+
+/* concated harmony reexport isEmpty */
+
+/* concated harmony reexport isNil */
+
+/* concated harmony reexport join */
+
+/* concated harmony reexport juxt */
+
+/* concated harmony reexport keys */
+
+/* concated harmony reexport keysIn */
+
+/* concated harmony reexport last */
+
+/* concated harmony reexport lastIndexOf */
+
+/* concated harmony reexport length */
+
+/* concated harmony reexport lens */
+
+/* concated harmony reexport lensIndex */
+
+/* concated harmony reexport lensPath */
+
+/* concated harmony reexport lensProp */
+
+/* concated harmony reexport lift */
+
+/* concated harmony reexport liftN */
+
+/* concated harmony reexport lt */
+
+/* concated harmony reexport lte */
+
+/* concated harmony reexport map */
+
+/* concated harmony reexport mapAccum */
+
+/* concated harmony reexport mapAccumRight */
+
+/* concated harmony reexport mapObjIndexed */
+
+/* concated harmony reexport match */
+
+/* concated harmony reexport mathMod */
+
+/* concated harmony reexport max */
+
+/* concated harmony reexport maxBy */
+
+/* concated harmony reexport mean */
+
+/* concated harmony reexport median */
+
+/* concated harmony reexport memoizeWith */
+
+/* concated harmony reexport merge */
+
+/* concated harmony reexport mergeAll */
+
+/* concated harmony reexport mergeDeepLeft */
+
+/* concated harmony reexport mergeDeepRight */
+
+/* concated harmony reexport mergeDeepWith */
+
+/* concated harmony reexport mergeDeepWithKey */
+
+/* concated harmony reexport mergeLeft */
+
+/* concated harmony reexport mergeRight */
+
+/* concated harmony reexport mergeWith */
+
+/* concated harmony reexport mergeWithKey */
+
+/* concated harmony reexport min */
+
+/* concated harmony reexport minBy */
+
+/* concated harmony reexport modulo */
+
+/* concated harmony reexport move */
+
+/* concated harmony reexport multiply */
+
+/* concated harmony reexport nAry */
+
+/* concated harmony reexport negate */
+
+/* concated harmony reexport none */
+
+/* concated harmony reexport not */
+
+/* concated harmony reexport nth */
+
+/* concated harmony reexport nthArg */
+
+/* concated harmony reexport o */
+
+/* concated harmony reexport objOf */
+
+/* concated harmony reexport of */
+
+/* concated harmony reexport omit */
+
+/* concated harmony reexport once */
+
+/* concated harmony reexport or */
+
+/* concated harmony reexport otherwise */
+
+/* concated harmony reexport over */
+
+/* concated harmony reexport pair */
+
+/* concated harmony reexport partial */
+
+/* concated harmony reexport partialRight */
+
+/* concated harmony reexport partition */
+
+/* concated harmony reexport path */
+
+/* concated harmony reexport pathEq */
+
+/* concated harmony reexport pathOr */
+
+/* concated harmony reexport pathSatisfies */
+
+/* concated harmony reexport pick */
+
+/* concated harmony reexport pickAll */
+
+/* concated harmony reexport pickBy */
+
+/* concated harmony reexport pipe */
+
+/* concated harmony reexport pipeK */
+
+/* concated harmony reexport pipeP */
+
+/* concated harmony reexport pipeWith */
+
+/* concated harmony reexport pluck */
+
+/* concated harmony reexport prepend */
+
+/* concated harmony reexport product */
+
+/* concated harmony reexport project */
+
+/* concated harmony reexport prop */
+
+/* concated harmony reexport propEq */
+
+/* concated harmony reexport propIs */
+
+/* concated harmony reexport propOr */
+
+/* concated harmony reexport propSatisfies */
+
+/* concated harmony reexport props */
+
+/* concated harmony reexport range */
+
+/* concated harmony reexport reduce */
+
+/* concated harmony reexport reduceBy */
+
+/* concated harmony reexport reduceRight */
+
+/* concated harmony reexport reduceWhile */
+
+/* concated harmony reexport reduced */
+
+/* concated harmony reexport reject */
+
+/* concated harmony reexport remove */
+
+/* concated harmony reexport repeat */
+
+/* concated harmony reexport replace */
+
+/* concated harmony reexport reverse */
+
+/* concated harmony reexport scan */
+
+/* concated harmony reexport sequence */
+
+/* concated harmony reexport set */
+
+/* concated harmony reexport slice */
+
+/* concated harmony reexport sort */
+
+/* concated harmony reexport sortBy */
+
+/* concated harmony reexport sortWith */
+
+/* concated harmony reexport split */
+
+/* concated harmony reexport splitAt */
+
+/* concated harmony reexport splitEvery */
+
+/* concated harmony reexport splitWhen */
+
+/* concated harmony reexport startsWith */
+
+/* concated harmony reexport subtract */
+
+/* concated harmony reexport sum */
+
+/* concated harmony reexport symmetricDifference */
+
+/* concated harmony reexport symmetricDifferenceWith */
+
+/* concated harmony reexport tail */
+
+/* concated harmony reexport take */
+
+/* concated harmony reexport takeLast */
+
+/* concated harmony reexport takeLastWhile */
+
+/* concated harmony reexport takeWhile */
+
+/* concated harmony reexport tap */
+
+/* concated harmony reexport test */
+
+/* concated harmony reexport then */
+
+/* concated harmony reexport times */
+
+/* concated harmony reexport toLower */
+
+/* concated harmony reexport toPairs */
+
+/* concated harmony reexport toPairsIn */
+
+/* concated harmony reexport toString */
+
+/* concated harmony reexport toUpper */
+
+/* concated harmony reexport transduce */
+
+/* concated harmony reexport transpose */
+
+/* concated harmony reexport traverse */
+
+/* concated harmony reexport trim */
+
+/* concated harmony reexport tryCatch */
+
+/* concated harmony reexport type */
+
+/* concated harmony reexport unapply */
+
+/* concated harmony reexport unary */
+
+/* concated harmony reexport uncurryN */
+
+/* concated harmony reexport unfold */
+
+/* concated harmony reexport union */
+
+/* concated harmony reexport unionWith */
+
+/* concated harmony reexport uniq */
+
+/* concated harmony reexport uniqBy */
+
+/* concated harmony reexport uniqWith */
+
+/* concated harmony reexport unless */
+
+/* concated harmony reexport unnest */
+
+/* concated harmony reexport until */
+
+/* concated harmony reexport update */
+
+/* concated harmony reexport useWith */
+
+/* concated harmony reexport values */
+
+/* concated harmony reexport valuesIn */
+
+/* concated harmony reexport view */
+
+/* concated harmony reexport when */
+
+/* concated harmony reexport where */
+
+/* concated harmony reexport whereEq */
+
+/* concated harmony reexport without */
+
+/* concated harmony reexport xprod */
+
+/* concated harmony reexport zip */
+
+/* concated harmony reexport zipObj */
+
+/* concated harmony reexport zipWith */
+
+/* concated harmony reexport thunkify */
