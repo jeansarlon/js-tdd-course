@@ -1,9 +1,13 @@
 /* eslint-disable object-curly-newline */
 
-const sum = (n1, n2) => n1 + n2;
-const sub = (n1, n2) => n1 - n2;
-const mult = (n1, n2) => n1 * n2;
-const div = (n1, n2) => (!n2 ? 'Não é possível divisão por ZERO!' : n1 / n2);
+const fizz = 'Fizz';
+const buzz = 'Buzz';
+const FizzBuzz = (n) => {
+  if (n % 3 === 0 && n % 5 === 0) return fizz + buzz;
+  if (n % 3 === 0) return fizz;
+  if (n % 5 === 0) return buzz;
 
+  return n;
+};
 
-export { sum, sub, mult, div };
+export default FizzBuzz;
