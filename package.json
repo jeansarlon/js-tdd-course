@@ -12,7 +12,9 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -25,8 +27,8 @@
   },
   "scripts": {
     "build": "webpack --colors --mode production",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --bail",
-    "test:tdd": "npm test -- --watch",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register  --watch",
     "dev": "npm run build -- --mode development; webpack-dev-server  --inline --open --hot",
     "lint": "./node_modules/.bin/eslint src/*.js"
   },
