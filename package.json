@@ -21,6 +21,7 @@
     "eslint-plugin-import": "^2.16.0",
     "husky": "^1.3.1",
     "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
@@ -29,13 +30,21 @@
     "build": "webpack --colors --mode production",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register  --watch",
+    "test:coverage": "nyc npm test",
     "dev": "npm run build -- --mode development; webpack-dev-server  --inline --open --hot",
     "lint": "./node_modules/.bin/eslint src/*.js"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint && npm run test:coverage"
     }
+  },
+  "nyc": {
+    "functions": 80,
+    "lines":80,
+    "check-coverage": true,
+    "reporter": ["text","html"],
+    "exclude": ["tests/**"]
   },
   "repository": {
     "type": "git",
