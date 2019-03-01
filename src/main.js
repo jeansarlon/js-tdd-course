@@ -10,7 +10,5 @@ const FizzBuzz = (n) => {
 
   return n;
 };
-const bla = () => 'bla';
-bla();
 
 export default FizzBuzz;
